@@ -6,13 +6,22 @@
      	private  $user;
 
      	function setMachineID($machine){
-     		$this->machine = $machine;
+
+               if($machine == 1100 && $machine == 0011){
+     		        $this->machine = $machine;
+             }
      	}
      	function getMachineID(){
-     		return $this->machine;
+     		 echo "Drone machine ".$this->machine."<br />";
      	}
      	function setUserID($user){
-     		$this->user = $user;
+
+               if($user == 'MN221' || $user == 'CF221'){
+     		        $this->user = $user;
+               }else{
+
+                    echo "Username is not valid <br />";
+               }    
      	}
      	function getUserID(){
      		return $this->user;
@@ -52,7 +61,7 @@
                }
      }
 
-	     $object1 = new Drone();
+	     $object1 = new DroneOne();
       	$object1->setMachineID("22121");
 	     $object1->setElisa("black");
 	     $object1->setUserID("John");
@@ -66,10 +75,8 @@
           $object3->DroneHardwareOne(); */
           
 
-
-
           printf("Drone Username: %s <br />", $object1->getUserID());
-	     printf("Drone ID: %s <br />", $object1->getMachineID());
+	     printf("Drone ID: %d <br />", $object1->getMachineID());
 	     printf("Drone Color: %s <br />", $object1->getElisa());
 	     printf("Drone Username: %s <br />", $object2->getUserID());
 	     printf("Drone ID: %d <br />", $object2->getMachineID());
